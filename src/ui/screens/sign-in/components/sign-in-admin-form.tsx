@@ -1,31 +1,19 @@
-import { Ionicons } from '@expo/vector-icons';
-import {
-  Button,
-  Icon,
-  Input,
-  InputGroup,
-  InputLeftAddon,
-  VStack,
-} from 'native-base';
+import { Button, VStack } from 'native-base';
+
+import { EmailInput } from './email_input';
+import { PasswordInput } from './password_input';
+import { useSignInForm } from '../sign-in_provider';
 
 export function SignInAdminForm() {
+  const { onSubmit, isSubmitting } = useSignInForm();
+
   return (
     <VStack space={4}>
-      <InputGroup>
-        <InputLeftAddon
-          children={<Icon as={Ionicons} name="person" color="white" />}
-        />
-        <Input flex={1} placeholder="E-mail" />
-      </InputGroup>
-      <InputGroup>
-        <InputLeftAddon
-          children={
-            <Icon as={Ionicons} name="md-lock-closed-outline" color="white" />
-          }
-        />
-        <Input flex={1} type="password" placeholder="Senha" />
-      </InputGroup>
-      <Button>Entrar</Button>
+      <EmailInput />
+      <PasswordInput />
+      <Button isLoading={isSubmitting} onPress={onSubmit}>
+        Entrar
+      </Button>
     </VStack>
   );
 }

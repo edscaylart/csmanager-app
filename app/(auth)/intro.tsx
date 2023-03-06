@@ -1,6 +1,6 @@
 import { Stack } from 'expo-router';
 
-import { IntroPresenter } from '@/presentation';
+import { IntroPresenter } from '@/presentation/presenters';
 
 export default function Page() {
   return (

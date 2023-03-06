@@ -1,6 +1,6 @@
 import { Stack } from 'expo-router';
 
-import { SignInPresenter } from '@/presentation';
+import { SignInPresenter } from '@/presentation/presenters';
 
 export default function SignIn() {
   return (
