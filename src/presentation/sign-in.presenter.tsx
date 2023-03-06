@@ -1,5 +1,5 @@
-import { SignIn } from '@/ui/sign-in/sign-in';
+import { SignInScreen } from '@/ui/screens';
 
 export function SignInPresenter() {
-  return <SignIn />;
+  return <SignInScreen />;
 }

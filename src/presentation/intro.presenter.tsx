@@ -1,12 +1,12 @@
 import { useRouter } from 'expo-router';
 
-import { Intro } from '@/ui/intro/intro';
+import { IntroScreen } from '@/ui/screens';
 
 export function IntroPresenter() {
   const router = useRouter();
 
   return (
-    <Intro
+    <IntroScreen
       onSignInNavigate={() => router.push('/sign-in')}
       onSignUpNavigate={() => router.push('/sign-up')}
     />

@@ -8,7 +8,7 @@ type Props = {
   onSignInNavigate: () => void;
 };
 
-export function Intro({ onSignUpNavigate, onSignInNavigate }: Props) {
+export function IntroScreen({ onSignUpNavigate, onSignInNavigate }: Props) {
   return (
     <VStack safeArea flex={1} bg="black" p={4} space={8}>
       <Center>
