@@ -23,7 +23,9 @@
         "backgroundColor": "#ffffff"
       }
     },
+    "scheme": "csmanager",
     "web": {
+      "bundler": "metro",
       "favicon": "./assets/favicon.png"
     }
   }
