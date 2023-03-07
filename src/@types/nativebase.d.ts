@@ -1,4 +1,4 @@
-import { theme } from '../styles';
+import { theme } from '@/styles';
 
 type CustomThemeType = typeof theme;
 

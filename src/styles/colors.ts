@@ -1,17 +1,18 @@
 export const colors = {
   csBlue: {
-    50: '#5d79ae',
+    100: '#5d79ae',
   },
   csBlack: {
-    50: '#0c0f12',
+    100: '#0c0f12',
   },
   csYellow: {
-    50: '#ccba7c',
+    100: '#ccba7c',
   },
   csBrown: {
-    50: '#413a27',
+    100: '#413a27',
   },
   csOrange: {
-    50: '#de9b35',
+    50: 'rgba(255, 236, 179, 0.1)',
+    100: '#de9b35',
   },
 };

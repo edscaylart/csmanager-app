@@ -14,7 +14,7 @@ function cacheImages(images: any[]) {
 }
 
 export function useCacheResources() {
-  const [loadingComplete, setLoadingCompleted] = useState(false);
+  const [isReady, setIsReady] = useState(false);
 
   const bootstrapAsync = async () => {
     const imageAssets = cacheImages([
@@ -25,12 +25,12 @@ export function useCacheResources() {
 
     await Promise.all([...imageAssets]);
 
-    setLoadingCompleted(true);
+    setIsReady(true);
   };
 
   useEffect(() => {
     bootstrapAsync();
   }, []);
 
-  return { loadingComplete };
+  return { isReady };
 }

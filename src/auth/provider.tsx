@@ -12,15 +12,13 @@ export function useAuth() {
 }
 
 function useProtectedRoute(session: Session | null) {
-  const segments = useSegments();
+  const rootSegment = useSegments()[0];
   const router = useRouter();
 
   useEffect(() => {
-    const inAuthGroup = segments[0] === '(auth)';
-
-    if (session?.user && inAuthGroup) {
+    if (session?.user && rootSegment !== '(app)') {
       router.replace('/');
-    } else if (!session?.user && !inAuthGroup) {
+    } else if (!session?.user && rootSegment !== '(auth)') {
       router.replace('intro');
     }
   });

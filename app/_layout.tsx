@@ -1,4 +1,4 @@
-import { Stack } from 'expo-router';
+import { Slot, SplashScreen } from 'expo-router';
 import { NativeBaseProvider } from 'native-base';
 
 import { Provider } from '@/auth/provider';
@@ -11,12 +11,16 @@ export const unstable_settings = {
 };
 
 export default function App() {
-  useCacheResources();
+  const { isReady } = useCacheResources();
+
+  if (!isReady) {
+    return <SplashScreen />;
+  }
 
   return (
     <NativeBaseProvider theme={theme}>
       <Provider>
-        <Stack />
+        <Slot />
       </Provider>
     </NativeBaseProvider>
   );
