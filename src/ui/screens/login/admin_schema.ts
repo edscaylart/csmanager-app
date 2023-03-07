@@ -1,6 +1,6 @@
 import { z } from 'zod';
 
-export const SignInAdminSchema = z.object({
+export const LoginAdminSchema = z.object({
   email: z
     .string({
       required_error: 'Por favor, informe seu e-mail',
@@ -11,4 +11,4 @@ export const SignInAdminSchema = z.object({
   }),
 });
 
-export type SignInAdmin = z.infer<typeof SignInAdminSchema>;
+export type LoginAdmin = z.infer<typeof LoginAdminSchema>;

@@ -1,11 +1,11 @@
 import { Center } from 'native-base';
 
-import { SignInAdminForm } from './components';
+import { LoginAdminForm } from './components';
 
-export function SignInScreen() {
+export function LoginScreen() {
   return (
     <Center safeArea flex={1} bg="black" p={4}>
-      <SignInAdminForm />
+      <LoginAdminForm />
     </Center>
   );
 }

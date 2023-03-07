@@ -7,8 +7,8 @@ export function IntroPresenter() {
 
   return (
     <IntroScreen
-      onSignInNavigate={() => router.push('/sign-in')}
-      onSignUpNavigate={() => router.push('/sign-up')}
+      onSignInNavigate={() => router.push('/login')}
+      onSignUpNavigate={() => router.push('/register')}
     />
   );
 }

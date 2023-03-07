@@ -2,11 +2,11 @@ import { Button, Center, Image, VStack } from 'native-base';
 
 import { EmailInput } from './email_input';
 import { PasswordInput } from './password_input';
-import { useSignInForm } from '../sign-in_provider';
+import { useSignInForm } from '../login_provider';
 
 import adminImg from '@/assets/images/admin.png';
 
-export function SignInAdminForm() {
+export function LoginAdminForm() {
   const { onSubmit, isSubmitting } = useSignInForm();
 
   return (

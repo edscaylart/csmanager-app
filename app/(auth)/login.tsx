@@ -1,12 +1,12 @@
 import { Stack } from 'expo-router';
 
-import { SignInPresenter } from '@/presentation/presenters';
+import { LoginPresenter } from '@/presentation/presenters';
 
-export default function SignIn() {
+export default function Login() {
   return (
     <>
       <Stack.Screen options={{ headerShown: false }} />
-      <SignInPresenter />
+      <LoginPresenter />
     </>
   );
 }

@@ -8,31 +8,28 @@ import {
 } from 'native-base';
 import { useController } from 'react-hook-form';
 
-import { useSignInForm } from '../sign-in_provider';
+import { useSignInForm } from '../login_provider';
 
-export function PasswordInput() {
+export function EmailInput() {
   const { control } = useSignInForm();
 
-  const { field, fieldState } = useController({ control, name: 'password' });
+  const { field, fieldState } = useController({ control, name: 'email' });
 
   return (
     <FormControl>
       <InputGroup>
         <InputLeftAddon
-          children={
-            <Icon as={Ionicons} name="md-lock-closed-outline" color="white" />
-          }
+          children={<Icon as={Ionicons} name="person" color="white" />}
         />
         <Input
           flex={1}
-          type="password"
-          placeholder="Senha"
+          placeholder="E-mail"
           autoCapitalize="none"
+          keyboardType="email-address"
           value={field.value}
           onChangeText={field.onChange}
         />
       </InputGroup>
-
       {fieldState.error ? (
         <FormControl.HelperText>
           {fieldState.error.message}
