@@ -7,6 +7,14 @@ module.exports = function (api) {
       require.resolve('expo-router/babel'),
       'transform-inline-environment-variables',
       [
+        'module:react-native-dotenv',
+        {
+          envName: 'APP_ENV',
+          moduleName: '@env',
+          path: '.env',
+        },
+      ],
+      [
         'module-resolver',
         {
           alias: {

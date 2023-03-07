@@ -12,5 +12,6 @@
       "@/app/*": ["../app/*"]
     }
   },
-  "include": ["src", "app"]
+  "include": ["src", "app"],
+  "typeRoots": ["./src/types"]
 }
