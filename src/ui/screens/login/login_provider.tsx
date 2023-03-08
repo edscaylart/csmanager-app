@@ -1,7 +1,7 @@
 import { createContext, useContext } from 'react';
 import { Control } from 'react-hook-form';
 
-import { LoginAdmin } from './admin_schema';
+import { LoginAdmin } from './login_schema';
 
 import { $WithChildren } from '@/types';
 
@@ -26,6 +26,6 @@ export function LoginFormProvider({
   );
 }
 
-export function useSignInForm() {
+export function useLoginForm() {
   return useContext(LoginContext);
 }

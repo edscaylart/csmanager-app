@@ -8,10 +8,10 @@ import {
 } from 'native-base';
 import { useController } from 'react-hook-form';
 
-import { useSignInForm } from '../login_provider';
+import { useLoginForm } from '../login_provider';
 
 export function EmailInput() {
-  const { control } = useSignInForm();
+  const { control } = useLoginForm();
 
   const { field, fieldState } = useController({ control, name: 'email' });
 

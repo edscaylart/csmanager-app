@@ -1,11 +1,15 @@
-import { Session } from '@supabase/supabase-js';
+import { Session, User } from '@supabase/supabase-js';
 import { useRouter, useSegments } from 'expo-router';
 import { createContext, useContext, useEffect, useState } from 'react';
 
 import { supabase } from '@/db/client';
 import { $WithChildren } from '@/types';
 
-const AuthContext = createContext(null);
+type AuthData = {
+  user?: User;
+};
+
+const AuthContext = createContext({} as AuthData);
 
 export function useAuth() {
   return useContext(AuthContext);
@@ -40,6 +44,8 @@ export function Provider(props: $WithChildren) {
   }, []);
 
   return (
-    <AuthContext.Provider value={null}>{props.children}</AuthContext.Provider>
+    <AuthContext.Provider value={{ user: session?.user }}>
+      {props.children}
+    </AuthContext.Provider>
   );
 }

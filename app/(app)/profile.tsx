@@ -1,40 +1,12 @@
-import { Button } from 'native-base';
-import { StyleSheet, Text, View } from 'react-native';
+import { Stack } from 'expo-router';
 
-import { supabase } from '@/db/client';
+import { ProfilePresenter } from '@/presentation/presenters';
 
 export default function Profile() {
-  const handleLogout = () => supabase.auth.signOut();
-
   return (
-    <View style={styles.container}>
-      <View style={styles.main}>
-        <Text style={styles.title}>Perfil</Text>
-        <Text style={styles.subtitle}>Configuração do perfil</Text>
-        <Button onPress={handleLogout}>Logout</Button>
-      </View>
-    </View>
+    <>
+      <Stack.Screen options={{ headerTitle: 'Meu Perfil' }} />
+      <ProfilePresenter />
+    </>
   );
 }
-
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    alignItems: 'center',
-    padding: 24,
-  },
-  main: {
-    flex: 1,
-    justifyContent: 'center',
-    maxWidth: 960,
-    marginHorizontal: 'auto',
-  },
-  title: {
-    fontSize: 64,
-    fontWeight: 'bold',
-  },
-  subtitle: {
-    fontSize: 36,
-    color: '#38434D',
-  },
-});

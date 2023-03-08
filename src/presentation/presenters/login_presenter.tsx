@@ -4,8 +4,8 @@ import { Alert } from 'react-native';
 
 import { supabase } from '@/db/client';
 import { LoginScreen } from '@/ui/screens';
-import { LoginAdmin, LoginAdminSchema } from '@/ui/screens/login/admin_schema';
 import { LoginFormProvider } from '@/ui/screens/login/login_provider';
+import { LoginAdmin, LoginAdminSchema } from '@/ui/screens/login/login_schema';
 
 export function LoginPresenter() {
   const { control, handleSubmit, formState } = useForm<LoginAdmin>({
