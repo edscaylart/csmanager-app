@@ -21,7 +21,7 @@ function useProtectedRoute(session: Session | null) {
 
   useEffect(() => {
     if (session?.user && rootSegment !== '(app)') {
-      router.replace('/');
+      router.replace('main');
     } else if (!session?.user && rootSegment !== '(auth)') {
       router.replace('intro');
     }

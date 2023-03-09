@@ -1,12 +1,14 @@
+import { Stack } from 'expo-router';
 import { StyleSheet, Text, View } from 'react-native';
 
-export default function Players() {
+export default function MatchMaker() {
   return (
     <>
+      <Stack.Screen options={{ headerTitle: 'Sorteios' }} />
       <View style={styles.container}>
         <View style={styles.main}>
-          <Text style={styles.title}>Jogadores</Text>
-          <Text style={styles.subtitle}>Listas e CRUD de jogadores</Text>
+          <Text style={styles.title}>Sorteio</Text>
+          <Text style={styles.subtitle}>Match Maker</Text>
         </View>
       </View>
     </>

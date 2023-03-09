@@ -1,13 +1,17 @@
+import { Stack } from 'expo-router';
 import { StyleSheet, Text, View } from 'react-native';
 
 export default function Maps() {
   return (
-    <View style={styles.container}>
-      <View style={styles.main}>
-        <Text style={styles.title}>Mapas</Text>
-        <Text style={styles.subtitle}>Listas e CRUD de mapas</Text>
+    <>
+      <Stack.Screen options={{ headerTitle: 'Mapas' }} />
+      <View style={styles.container}>
+        <View style={styles.main}>
+          <Text style={styles.title}>Mapas</Text>
+          <Text style={styles.subtitle}>Listas e CRUD de mapas</Text>
+        </View>
       </View>
-    </View>
+    </>
   );
 }
 
