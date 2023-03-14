@@ -4,6 +4,7 @@ import { Box, Fab, Icon, useToast } from 'native-base';
 import { useEffect, useState } from 'react';
 
 import { LoadPlayers } from '@/domain/usecases';
+import { usePlayerStore } from '@/store/player-store';
 import { ToastBox } from '@/ui/components';
 import { PlayersScreen } from '@/ui/screens';
 
@@ -13,12 +14,14 @@ type Props = {
 
 export function PlayersPresenter({ loadPlayers }: Props) {
   const toast = useToast();
-  const [players, setPlayer] = useState<any[]>([]);
+  const router = useRouter();
+
+  const players = usePlayerStore(state => state.players);
 
   useEffect(() => {
     loadPlayers
       .list()
-      .then(result => setPlayer(result))
+      .then(result => usePlayerStore.setState({ players: result }))
       .catch(error => {
         toast.show({
           render: () => <ToastBox type="error">{error.message}</ToastBox>,
@@ -35,6 +38,7 @@ export function PlayersPresenter({ loadPlayers }: Props) {
         size="sm"
         label="Novo jogador"
         icon={<Icon color="white" as={AntDesign} name="plus" size="sm" />}
+        onPress={() => router.push('/player/add')}
       />
     </Box>
   );

@@ -1,5 +1,5 @@
 import { zodResolver } from '@hookform/resolvers/zod';
-import { Box, useToast } from 'native-base';
+import { useToast } from 'native-base';
 import { useForm } from 'react-hook-form';
 
 import { useAuth } from '@/auth/provider';

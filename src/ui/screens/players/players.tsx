@@ -22,6 +22,7 @@ type Props = {
 export function PlayersScreen({ players }: Props) {
   return (
     <FlatList
+      _contentContainerStyle={{ pb: '16' }}
       data={players}
       keyExtractor={item => item.id}
       renderItem={({ item }) => (
